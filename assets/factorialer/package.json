@@ -1,0 +1,15 @@
+{
+  "name": "factorialer",
+  "version": "1.0.0",
+  "description": "Calculate the factorial of a non-negative integer",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "docker build . -t t1",
+    "test": "docker run -it --rm -p 3000:3000 t1"
+  },
+  "author": "Melih Yildiz <mzyil12@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "csv-data-importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm install && rm -rf /tmp/dist.zip && zip -r /tmp/dist.zip *",
+    "deploy": "aws lambda update-function-code --function-name csv-data-importer --zip-file fileb:///tmp/dist.zip",
+    "prebundle": "npm install",
+    "bundle": "cp -au . /asset-output"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "cloudformation",
+    "csv",
+    "process",
+    "data",
+    "importer"
+  ],
+  "author": "Melih Yildiz <mzyil12@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
+    "deep-equal": "^2.0.5",
+    "knex": "^0.21.21",
+    "mysql2": "^2.3.0"
+  }
+}

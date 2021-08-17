@@ -1,14 +1,11 @@
-# Welcome to your CDK TypeScript project!
+# aws-iac-example
 
-This is a blank project for TypeScript development with CDK.
+This is a sample project to mess around with AWS CDK.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+There are 2 stacks: "CsvDataImporter" and "Factorialer".
 
-## Useful commands
+## CsvDataImporter
+This a serverless application that works as a CSV importer into a data storage. It is triggered when a CSV file is uploaded to S3 and writes its contents to a RDS MariaDB database.
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+## Factorialer
+This is a containerized application to calculate the factorial of a non-negative integer provided by the user and return the value. It is exposed via a Load Balancer.
